@@ -8,7 +8,9 @@ New directory for project and initialization!
 `npm init -y`
 `npm install express ejs body-parser`
 
-###Project Structure
+### Project Structure
+
+```
 express-mvc-app/
 ├── controllers/
 │   └── userController.js
@@ -20,11 +22,13 @@ express-mvc-app/
 │   └── userRoutes.js
 ├── app.js
 └── package.json
+```
 
-##Model
+## Model
 The models folder (userModel.js) will represent the data structure and business logic.
 
-```JavaScript
+```
+// JavaScript
 // models/userModel.js
 const users = [];
 
@@ -50,10 +54,11 @@ class User {
 module.exports = User;
 ```
 
-##Controller
+## Controller
 The controllers folder (userController.js) will handle the application logic and interact with the model.
 
-```JavaScript
+```
+// JavaScript
 // controllers/userController.js
 const User = require('../models/userModel');
 
@@ -70,10 +75,11 @@ exports.createUser = (req, res) => {
 };
 ```
 
-##Routes
+## Routes
 The routes folder (userRoutes.js) will define the application routes.
 
-```JavaScript
+```
+// JavaScript
 // routes/userRoutes.js
 const express = require('express');
 const router = express.Router();
@@ -85,10 +91,11 @@ router.post('/create', userController.createUser);
 module.exports = router;
 ```
 
-##Views
+## Views
 The views folder (index.ejs) This file will define the HTML template.
 
-```HTML
+```
+// HTML
 <!-- views/index.ejs -->
 <!DOCTYPE html>
 <html lang="en">
@@ -113,10 +120,11 @@ The views folder (index.ejs) This file will define the HTML template.
 </html>
 ```
 
-##Main Application
+## Main Application
 Finally, The Main application file app.js.
 
-```JavaScript
+```
+// JavaScript
 // app.js
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -138,5 +146,5 @@ app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
 });
 ```
-###Summary
+### Summary
 This setup demonstrates a basic MVC architecture using Node.js and Express.js. The Model handles data and business logic, the View renders the user interface, and the Controller processes incoming requests and returns responses. This structure helps in keeping the code organized and maintainable.
